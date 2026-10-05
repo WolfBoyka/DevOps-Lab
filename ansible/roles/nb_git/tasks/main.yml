@@ -1,0 +1,9 @@
+---
+- name: Détecter le dépôt Git
+  ansible.builtin.import_tasks: detect.yml
+
+- name: Collecter l'état Git
+  ansible.builtin.import_tasks: status.yml
+
+- name: Collecter l'historique Git
+  ansible.builtin.import_tasks: history.yml

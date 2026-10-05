@@ -1,0 +1,14 @@
+---
+- name: Charger la bannière de fin
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Résumé"
+
+- name: Résumé du POC
+  ansible.builtin.debug:
+    msg:
+      - "Node={{ nb_platform.hostname }}"
+      - "OS={{ nb_platform.distribution }} {{ nb_platform.version }}"
+      - "Workspace={{ nb_workspace_root }}"

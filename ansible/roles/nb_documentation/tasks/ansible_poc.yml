@@ -1,0 +1,13 @@
+---
+- name: Charger la bannière documentation Ansible
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Documentation Ansible"
+
+- name: Générer la documentation du POC Ansible
+  ansible.builtin.template:
+    src: ANSIBLE-POC.md.j2
+    dest: "{{ nb_workspace_root }}/docs/ANSIBLE-POC.md"
+    mode: "0644"

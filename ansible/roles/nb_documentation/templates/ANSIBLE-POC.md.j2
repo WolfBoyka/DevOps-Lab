@@ -1,0 +1,38 @@
+# Ansible Node Baseline POC
+
+## Machine
+
+- Hostname: {{ nb_platform.hostname }}
+- OS: {{ nb_platform.distribution }} {{ nb_platform.version }}
+- Kernel: {{ nb_platform.kernel }}
+- Architecture: {{ nb_platform.architecture }}
+
+## Architecture Ansible
+
+Playbook
+→ Roles
+→ Task files
+→ Tasks
+→ Modules
+
+## Découpage
+
+Le playbook orchestre les rôles.
+
+Chaque rôle possède un point d'entrée `tasks/main.yml`.
+
+Les tâches fixes sont structurées avec `import_tasks`.
+
+Les tâches dynamiques ou répétées sont appelées avec `include_tasks`.
+
+Le rôle `nb_common` fournit des tâches mutualisées réutilisables par plusieurs rôles.
+
+## Import vs Include
+
+`import_tasks` est statique : Ansible charge les tâches avant l'exécution.
+
+`include_tasks` est dynamique : Ansible charge les tâches lorsqu'il atteint l'instruction pendant l'exécution.
+
+## Workspace
+
+{{ nb_workspace_root }}

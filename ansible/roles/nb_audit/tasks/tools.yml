@@ -1,0 +1,13 @@
+---
+- name: Charger la bannière audit
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Audit des outils DevOps"
+
+- name: Vérifier chaque outil
+  ansible.builtin.include_tasks: check_one_tool.yml
+  loop: "{{ nb_audit_commands }}"
+  loop_control:
+    loop_var: nb_tool

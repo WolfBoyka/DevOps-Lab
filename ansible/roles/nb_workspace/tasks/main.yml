@@ -1,0 +1,6 @@
+---
+- name: Charger la création du workspace
+  ansible.builtin.import_tasks: directories.yml
+
+- name: Charger la vérification du workspace
+  ansible.builtin.import_tasks: verify.yml

@@ -1,0 +1,6 @@
+---
+- name: Générer la documentation Ansible
+  ansible.builtin.import_tasks: ansible_poc.yml
+
+- name: Générer la documentation Git
+  ansible.builtin.import_tasks: git_course.yml

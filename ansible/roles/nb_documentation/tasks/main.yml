@@ -1,0 +1,3 @@
+---
+- name: Charger la génération de documentation
+  ansible.builtin.import_tasks: render.yml

@@ -1,0 +1,6 @@
+---
+- name: Charger la normalisation des facts
+  ansible.builtin.import_tasks: facts.yml
+
+- name: Charger l'affichage de la plateforme
+  ansible.builtin.import_tasks: summary.yml

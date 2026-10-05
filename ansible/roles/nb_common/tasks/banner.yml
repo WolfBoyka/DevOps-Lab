@@ -1,0 +1,4 @@
+---
+- name: "Section | {{ nb_section_title }}"
+  ansible.builtin.debug:
+    msg: "===== {{ nb_section_title }} ====="

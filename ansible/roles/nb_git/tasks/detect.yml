@@ -1,0 +1,22 @@
+---
+- name: Charger la bannière Git
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Git"
+
+- name: Détecter la racine du dépôt Git
+  ansible.builtin.command:
+    argv:
+      - git
+      - rev-parse
+      - --show-toplevel
+  args:
+    chdir: "{{ playbook_dir }}"
+  register: nb_git_root_result
+  changed_when: false
+
+- name: Normaliser le chemin du dépôt Git
+  ansible.builtin.set_fact:
+    nb_git_root: "{{ nb_git_root_result.stdout }}"

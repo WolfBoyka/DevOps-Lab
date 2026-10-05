@@ -1,0 +1,10 @@
+---
+- name: Auditer le node DevOps
+  hosts: local
+  gather_facts: true
+
+  roles:
+    - nb_platform
+    - nb_git
+    - nb_audit
+    - nb_report

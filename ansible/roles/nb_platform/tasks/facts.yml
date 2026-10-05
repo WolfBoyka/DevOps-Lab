@@ -1,0 +1,9 @@
+---
+- name: Normaliser les informations de plateforme
+  ansible.builtin.set_fact:
+    nb_platform:
+      hostname: "{{ ansible_facts['hostname'] }}"
+      distribution: "{{ ansible_facts['distribution'] }}"
+      version: "{{ ansible_facts['distribution_version'] }}"
+      kernel: "{{ ansible_facts['kernel'] }}"
+      architecture: "{{ ansible_facts['architecture'] }}"

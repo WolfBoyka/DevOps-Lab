@@ -1,0 +1,61 @@
+# Git - Suivi du POC DevOps-Lab
+
+Ce document est généré automatiquement par Ansible.
+
+## Dépôt actuel
+
+- Racine : `{{ nb_git_root }}`
+- Branche : `{{ nb_git_branch_result.stdout }}`
+
+## État Git au moment de la génération
+
+```text
+{{ nb_git_status_result.stdout | default("Working tree propre", true) }}
+```
+
+## Changements actuellement stagés
+
+```text
+{{ nb_git_staged_stat_result.stdout | default("Aucun changement stagé", true) }}
+```
+
+## Derniers commits
+
+```text
+{{ nb_git_log_result.stdout }}
+```
+
+## Commandes Git étudiées
+
+{% for item in nb_git_course_commands %}
+### `{{ item.command }}`
+
+{{ item.description }}
+
+{% endfor %}
+
+## Workflow utilisé dans le lab
+
+```text
+Modification
+    ↓
+git status --short
+    ↓
+git diff
+    ↓
+git add
+    ↓
+git diff --cached --check
+    ↓
+git diff --cached --stat
+    ↓
+git commit
+    ↓
+git push origin main
+```
+
+## Principe de versionnement
+
+Le dépôt Git constitue la source versionnée du laboratoire.
+
+Les commits sont réalisés par blocs fonctionnels cohérents afin de conserver un historique lisible de la progression.

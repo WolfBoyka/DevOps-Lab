@@ -1,0 +1,9 @@
+---
+- name: "Vérifier le chemin {{ nb_path_to_check }}"
+  ansible.builtin.stat:
+    path: "{{ nb_path_to_check }}"
+  register: nb_path_state
+
+- name: "Afficher l'état de {{ nb_path_to_check }}"
+  ansible.builtin.debug:
+    msg: "{{ nb_path_to_check }} => {{ 'PRESENT' if nb_path_state.stat.exists else 'ABSENT' }}"

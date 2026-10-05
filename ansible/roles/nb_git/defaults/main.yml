@@ -1,0 +1,30 @@
+---
+nb_git_log_count: 5
+
+nb_git_course_commands:
+  - command: "git status --short"
+    description: "Afficher l'état compact du working tree et de la staging area."
+
+  - command: "git diff"
+    description: "Afficher les modifications non stagées."
+
+  - command: "git diff --cached"
+    description: "Afficher les modifications déjà placées dans la staging area."
+
+  - command: "git diff --cached --check"
+    description: "Détecter notamment les erreurs de whitespace avant un commit."
+
+  - command: "git diff --cached --stat"
+    description: "Afficher un résumé statistique du contenu stagé."
+
+  - command: "git add <fichier>"
+    description: "Ajouter ou actualiser un fichier dans la staging area."
+
+  - command: "git commit -m \"message\""
+    description: "Créer un commit à partir de l'état actuellement stagé."
+
+  - command: "git push origin main"
+    description: "Envoyer les commits locaux de la branche main vers le dépôt distant origin."
+
+  - command: "git log --oneline"
+    description: "Afficher l'historique des commits sous forme compacte."

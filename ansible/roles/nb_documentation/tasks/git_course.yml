@@ -1,0 +1,6 @@
+---
+- name: Générer le suivi de cours Git
+  ansible.builtin.template:
+    src: GIT-WORKFLOW.md.j2
+    dest: "{{ nb_workspace_root }}/docs/GIT-WORKFLOW.md"
+    mode: "0644"

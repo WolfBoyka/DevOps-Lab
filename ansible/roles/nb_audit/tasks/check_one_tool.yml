@@ -1,0 +1,12 @@
+---
+- name: "Chercher {{ nb_tool }}"
+  ansible.builtin.shell: "command -v {{ nb_tool }}"
+  args:
+    executable: /bin/bash
+  register: nb_tool_check
+  changed_when: false
+  failed_when: false
+
+- name: "Résultat pour {{ nb_tool }}"
+  ansible.builtin.debug:
+    msg: "{{ nb_tool }} => {{ nb_tool_check.stdout if nb_tool_check.rc == 0 else 'ABSENT' }}"

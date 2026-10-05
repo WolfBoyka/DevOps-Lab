@@ -1,0 +1,7 @@
+---
+nb_audit_commands:
+  - git
+  - python3
+  - docker
+  - kubectl
+  - oc

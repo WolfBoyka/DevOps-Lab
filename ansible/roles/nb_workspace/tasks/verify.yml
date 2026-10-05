@@ -1,0 +1,7 @@
+---
+- name: Vérifier le workspace avec la bibliothèque commune
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: check_path
+  vars:
+    nb_path_to_check: "{{ nb_workspace_root }}"

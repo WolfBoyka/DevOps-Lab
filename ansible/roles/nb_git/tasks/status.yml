@@ -1,0 +1,34 @@
+---
+- name: Lire la branche Git courante
+  ansible.builtin.command:
+    argv:
+      - git
+      - branch
+      - --show-current
+  args:
+    chdir: "{{ nb_git_root }}"
+  register: nb_git_branch_result
+  changed_when: false
+
+- name: Lire l'état Git
+  ansible.builtin.command:
+    argv:
+      - git
+      - status
+      - --short
+  args:
+    chdir: "{{ nb_git_root }}"
+  register: nb_git_status_result
+  changed_when: false
+
+- name: Lire le résumé des changements stagés
+  ansible.builtin.command:
+    argv:
+      - git
+      - diff
+      - --cached
+      - --stat
+  args:
+    chdir: "{{ nb_git_root }}"
+  register: nb_git_staged_stat_result
+  changed_when: false

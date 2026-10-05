@@ -1,0 +1,7 @@
+---
+environnement: "lab"
+responsable: "Wolf"
+
+lab_file: "/home/wolf/ansible-lab.conf"
+
+nb_workspace_root: "/home/wolf/devops-node-lab"

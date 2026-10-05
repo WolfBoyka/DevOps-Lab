@@ -1,0 +1,13 @@
+---
+- name: Lire les derniers commits Git
+  ansible.builtin.command:
+    argv:
+      - git
+      - log
+      - "-{{ nb_git_log_count }}"
+      - --oneline
+      - --decorate
+  args:
+    chdir: "{{ nb_git_root }}"
+  register: nb_git_log_result
+  changed_when: false

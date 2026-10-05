@@ -1,0 +1,6 @@
+---
+- name: Charger l'audit des outils
+  ansible.builtin.import_tasks: tools.yml
+
+- name: Charger l'audit des chemins
+  ansible.builtin.import_tasks: paths.yml

@@ -1,0 +1,15 @@
+---
+- name: Charger la bannière plateforme
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Plateforme"
+
+- name: Afficher la plateforme
+  ansible.builtin.debug:
+    msg:
+      - "Hostname={{ nb_platform.hostname }}"
+      - "OS={{ nb_platform.distribution }} {{ nb_platform.version }}"
+      - "Kernel={{ nb_platform.kernel }}"
+      - "Architecture={{ nb_platform.architecture }}"

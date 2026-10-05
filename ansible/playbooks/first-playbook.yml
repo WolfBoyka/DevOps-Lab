@@ -1,0 +1,27 @@
+---
+- name: Configuration du lab Ansible
+  hosts: local
+  gather_facts: true
+
+  tasks:
+    - name: Afficher les informations système
+      ansible.builtin.debug:
+        msg: "OS={{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}, kernel={{ ansible_facts['kernel'] }}, architecture={{ ansible_facts['architecture'] }}"
+
+    - name: Afficher les variables du groupe
+      ansible.builtin.debug:
+        msg: "Environnement={{ environnement }}, responsable={{ responsable }}"
+
+    - name: Créer le fichier de configuration du lab
+      ansible.builtin.copy:
+        dest: "{{ lab_file }}"
+        content: |
+          environnement={{ environnement }}
+          responsable={{ responsable }}
+        mode: "0644"
+      notify: Signaler la modification
+
+  handlers:
+    - name: Signaler la modification
+      ansible.builtin.debug:
+        msg: "Le fichier {{ lab_file }} a été créé ou modifié."

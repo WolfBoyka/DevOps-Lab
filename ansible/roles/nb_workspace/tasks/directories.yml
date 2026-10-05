@@ -1,0 +1,23 @@
+---
+- name: Charger la bannière workspace
+  ansible.builtin.import_role:
+    name: nb_common
+    tasks_from: banner
+  vars:
+    nb_section_title: "Workspace DevOps"
+
+- name: Créer le workspace principal
+  ansible.builtin.file:
+    path: "{{ nb_workspace_root }}"
+    state: directory
+    mode: "0755"
+
+- name: Créer les sous-répertoires
+  ansible.builtin.file:
+    path: "{{ nb_workspace_root }}/{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - docs
+    - reports
+    - tmp
