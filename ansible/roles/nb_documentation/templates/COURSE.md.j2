@@ -1,0 +1,12 @@
+# {{ nb_current_course.title }}
+
+Ce document est généré automatiquement par le POC Ansible DevOps-Lab.
+
+{% for section in nb_current_course.sections %}
+## {{ section.title }}
+
+{% for point in section.points %}
+- {{ point }}
+{% endfor %}
+
+{% endfor %}

@@ -1,0 +1,30 @@
+---
+nb_course_default_variable: "course_default"
+
+course_default:
+  title: "Cours générique"
+  sections:
+    - title: "Information"
+      points:
+        - "Aucune source de cours spécifique n'a été renseignée pour ce document."
+
+nb_course_documents:
+  - title: "Ansible"
+    filename: "COURSE-ANSIBLE.md"
+    variable: "course_ansible"
+
+  - title: "Git"
+    filename: "COURSE-GIT.md"
+    variable: "course_git"
+
+  - title: "Linux"
+    filename: "COURSE-LINUX.md"
+    variable: "course_linux"
+
+  - title: "Formats de configuration"
+    filename: "COURSE-FORMATS.md"
+    variable: "course_formats"
+
+  - title: "DevOps"
+    filename: "COURSE-DEVOPS.md"
+    variable: "course_devops"

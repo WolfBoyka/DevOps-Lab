@@ -1,0 +1,26 @@
+---
+course_formats:
+  title: "Formats de configuration"
+  sections:
+    - title: "YAML"
+      points:
+        - "YAML est un format de sérialisation très utilisé dans l'écosystème DevOps."
+        - "La structure repose principalement sur l'indentation."
+        - "Il permet de représenter des mappings, listes et structures imbriquées."
+        - "Il est très utilisé avec Ansible, Kubernetes et les pipelines CI/CD."
+        - "L'indentation est significative : une mauvaise indentation peut modifier ou invalider la structure."
+
+    - title: "TOML"
+      points:
+        - "TOML est principalement orienté configuration."
+        - "Les valeurs utilisent une syntaxe explicite de type cle = valeur."
+        - "Les sections sont représentées par des tables comme [server]."
+        - "Il dépend moins de l'indentation que YAML."
+        - "On le rencontre notamment dans pyproject.toml et de nombreuses configurations applicatives."
+
+    - title: "YAML vs TOML"
+      points:
+        - "YAML privilégie les structures hiérarchiques compactes."
+        - "TOML privilégie une configuration explicite organisée en tables."
+        - "YAML est particulièrement courant pour décrire des objets complexes DevOps."
+        - "TOML est souvent confortable pour configurer une application ou un outil."

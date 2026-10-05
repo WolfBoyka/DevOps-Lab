@@ -1,0 +1,60 @@
+---
+course_linux:
+  title: "Linux et shell"
+  sections:
+    - title: "Chemins"
+      points:
+        - "~ représente le répertoire personnel de l'utilisateur."
+        - "$HOME contient le chemin du répertoire personnel."
+        - "$PWD contient le répertoire courant."
+
+    - title: "Fichiers cachés"
+      points:
+        - "Sous Linux, un nom commençant par un point désigne conventionnellement un fichier ou dossier caché."
+        - "ls -la affiche notamment les fichiers cachés et les informations détaillées."
+
+    - title: "PATH"
+      points:
+        - "$PATH contient la liste ordonnée des répertoires dans lesquels le shell recherche les exécutables."
+        - "export PATH=\"$HOME/.local/bin:$PATH\" ajoute ~/.local/bin au début du PATH."
+        - "command -v permet de déterminer quel exécutable ou commande sera utilisé."
+
+    - title: "Variables d'environnement"
+      points:
+        - "export rend une variable disponible aux processus enfants."
+        - "source recharge un fichier dans le shell courant."
+        - "~/.bashrc configure notamment les sessions Bash interactives."
+
+    - title: "Redirections"
+      points:
+        - "> écrit vers un fichier en remplaçant son contenu."
+        - ">> ajoute du contenu à la fin du fichier."
+        - "Un heredoc permet de fournir plusieurs lignes à une commande jusqu'à un marqueur comme EOF."
+
+    - title: "Commandes courantes"
+      points:
+        - "cat affiche ou concatène le contenu de fichiers."
+        - "mkdir -p crée une arborescence et tolère les répertoires parents déjà présents."
+        - "find recherche des fichiers selon différents critères."
+        - "grep recherche du texte."
+        - "sed peut effectuer des transformations de texte non interactives."
+        - "whoami affiche l'utilisateur effectif."
+        - "uname -a affiche les informations principales fournies par uname sur le noyau et la plateforme."
+
+    - title: "Processus"
+      points:
+        - "pgrep recherche des processus selon leur nom."
+        - "pgrep -af affiche également la ligne de commande complète."
+
+    - title: "Suppression"
+      points:
+        - "rm -r supprime récursivement une arborescence."
+        - "rm -f force la suppression sans demander certaines confirmations."
+        - "rm -rf combine récursivité et force et exige donc une vérification stricte du chemin avant exécution."
+
+    - title: "APT et Python"
+      points:
+        - "apt update actualise le catalogue des paquets disponibles."
+        - "apt upgrade installe les mises à jour disponibles pour les paquets installés."
+        - "APT gère les paquets du système."
+        - "pip gère les paquets Python et fonctionne à un niveau différent du gestionnaire de paquets système."

@@ -1,6 +1,9 @@
 ---
-- name: Générer la documentation Ansible
+- name: Générer la documentation Ansible du POC
   ansible.builtin.import_tasks: ansible_poc.yml
 
-- name: Générer la documentation Git
+- name: Générer la documentation Git opérationnelle
   ansible.builtin.import_tasks: git_course.yml
+
+- name: Générer les cours modulaires
+  ansible.builtin.import_tasks: render_courses.yml

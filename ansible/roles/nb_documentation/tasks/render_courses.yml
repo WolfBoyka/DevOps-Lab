@@ -1,0 +1,6 @@
+---
+- name: Générer les cours
+  ansible.builtin.include_tasks: render_one_course.yml
+  loop: "{{ nb_course_documents }}"
+  loop_control:
+    loop_var: nb_course_document

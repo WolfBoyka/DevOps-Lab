@@ -1,0 +1,58 @@
+---
+course_git:
+  title: "Git"
+  sections:
+    - title: "États principaux"
+      points:
+        - "Le working tree contient les fichiers actuellement présents et modifiés."
+        - "La staging area ou index contient le contenu préparé pour le prochain commit."
+        - "HEAD représente généralement le commit actuellement checkout."
+
+    - title: "Status"
+      points:
+        - "git status --short affiche un état compact."
+        - "?? signifie fichier non suivi."
+        - "A en première colonne signifie Added dans la staging area."
+        - "M en deuxième colonne signifie modification du working tree non stagée."
+        - "AM signifie ajouté dans l'index puis remodifié dans le working tree."
+
+    - title: "Diff"
+      points:
+        - "git diff affiche les changements non stagés."
+        - "git diff --cached affiche les changements stagés."
+        - "git diff --cached --check recherche notamment certains problèmes de whitespace."
+        - "git diff --cached --stat affiche un résumé statistique."
+
+    - title: "Workflow"
+      points:
+        - "git add place ou actualise du contenu dans l'index."
+        - "git commit crée un commit à partir de l'index."
+        - "git push envoie les commits locaux vers un remote."
+        - "git pull récupère puis intègre les modifications distantes."
+        - "git fetch récupère les références distantes sans les intégrer automatiquement."
+
+    - title: "Branches"
+      points:
+        - "Une branche est un pointeur mobile vers une suite de commits."
+        - "main est utilisée comme branche principale du DevOps-Lab."
+        - "Les feature branches permettent d'isoler une évolution avant fusion."
+
+    - title: "Identité"
+      points:
+        - "git config --global user.name définit le nom Git global."
+        - "git config --global user.email définit l'adresse associée aux commits."
+        - "Une configuration locale au dépôt peut surcharger la configuration globale."
+
+    - title: "Windows et WSL"
+      points:
+        - "Git Windows et Git WSL sont deux installations distinctes avec leurs propres configurations."
+        - "Le même dépôt peut être manipulé depuis WSL lorsqu'il est monté sous /mnt/c ou /mnt/d."
+        - "Les fins de ligne LF et CRLF nécessitent une attention particulière entre Windows et Linux."
+        - "core.autocrlf contrôle une partie de la conversion automatique des fins de ligne."
+
+    - title: "Diagnostic avancé"
+      points:
+        - "git ls-files --eol permet d'inspecter les fins de ligne vues par Git."
+        - "git hash-object permet de calculer l'identifiant de contenu d'un fichier."
+        - "git rev-parse permet notamment d'interroger les références et objets Git."
+        - "git update-index --refresh actualise les informations statistiques conservées dans l'index."

@@ -1,0 +1,61 @@
+---
+course_ansible:
+  title: "Ansible"
+  sections:
+    - title: "Architecture"
+      points:
+        - "Le control node exécute Ansible."
+        - "Les managed nodes sont les machines administrées."
+        - "L'inventory décrit les hôtes et les groupes ciblables."
+        - "Une connexion peut être distante via SSH ou locale avec ansible_connection=local."
+
+    - title: "Commandes ad-hoc"
+      points:
+        - "Une commande ad-hoc exécute ponctuellement un module Ansible sur une cible."
+        - "ansible.builtin.ping vérifie la capacité d'Ansible à exécuter correctement sur la cible ; ce n'est pas un ping ICMP."
+        - "ansible.builtin.command exécute directement une commande sans passer par un shell."
+
+    - title: "Playbooks"
+      points:
+        - "Un playbook orchestre des plays, rôles et tâches."
+        - "hosts indique les cibles."
+        - "gather_facts collecte automatiquement des informations système."
+        - "Les facts modernes sont accessibles via ansible_facts."
+
+    - title: "Variables"
+      points:
+        - "vars permet de définir des variables dans un play."
+        - "group_vars associe automatiquement des variables à un groupe d'inventory."
+        - "defaults/main.yml fournit les valeurs par défaut facilement surchargeables d'un rôle."
+        - !unsafe "Jinja2 utilise notamment la syntaxe {{ variable }} pour injecter une valeur."
+
+    - title: "Idempotence"
+      points:
+        - "Un playbook idempotent peut être rejoué sans provoquer de changement inutile lorsque l'état souhaité est déjà atteint."
+        - "changed indique qu'une tâche a réellement modifié l'état selon Ansible."
+        - "changed_when permet d'adapter explicitement cette détection."
+
+    - title: "Handlers"
+      points:
+        - "Un handler est une tâche déclenchée par notify lorsqu'une tâche signale un changement."
+        - "Les handlers sont typiquement utilisés pour redémarrer ou recharger un service uniquement lorsque sa configuration change."
+
+    - title: "Roles"
+      points:
+        - "Un rôle encapsule un composant Ansible réutilisable."
+        - "tasks/main.yml constitue généralement son point d'entrée."
+        - "defaults contient ses valeurs par défaut."
+        - "handlers contient ses handlers."
+        - "templates contient ses templates Jinja2."
+
+    - title: "Import et Include"
+      points:
+        - "import_tasks et import_role sont statiques : leur structure est connue pendant le chargement du playbook."
+        - "include_tasks et include_role sont dynamiques : leur contenu est chargé pendant l'exécution."
+        - "Les imports conviennent à une architecture fixe."
+        - "Les includes sont utiles notamment avec les boucles et décisions runtime."
+
+    - title: "Templates"
+      points:
+        - "ansible.builtin.template génère un fichier à partir d'un template Jinja2."
+        - "Le template peut utiliser des variables, facts, boucles et conditions."

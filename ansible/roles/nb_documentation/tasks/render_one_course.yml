@@ -1,0 +1,14 @@
+---
+- name: Déterminer la variable source du cours
+  ansible.builtin.set_fact:
+    nb_course_variable_name: "{{ nb_course_document.variable | default(nb_course_default_variable, true) }}"
+
+- name: Charger les données du cours
+  ansible.builtin.set_fact:
+    nb_current_course: "{{ lookup('ansible.builtin.vars', nb_course_variable_name, default=course_default) }}"
+
+- name: "Générer {{ nb_course_document.filename }}"
+  ansible.builtin.template:
+    src: COURSE.md.j2
+    dest: "{{ nb_workspace_root }}/docs/{{ nb_course_document.filename }}"
+    mode: "0644"

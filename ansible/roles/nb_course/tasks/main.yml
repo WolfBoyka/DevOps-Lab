@@ -1,0 +1,15 @@
+---
+- name: Charger les connaissances Ansible
+  ansible.builtin.include_vars: ansible.yml
+
+- name: Charger les connaissances Git
+  ansible.builtin.include_vars: git.yml
+
+- name: Charger les connaissances Linux
+  ansible.builtin.include_vars: linux.yml
+
+- name: Charger les connaissances Formats
+  ansible.builtin.include_vars: formats.yml
+
+- name: Charger les connaissances DevOps
+  ansible.builtin.include_vars: devops.yml

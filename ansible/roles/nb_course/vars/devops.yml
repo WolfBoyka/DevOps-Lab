@@ -1,0 +1,60 @@
+---
+course_devops:
+  title: "DevOps"
+  sections:
+    - title: "Principes"
+      points:
+        - "DevOps rapproche développement et exploitation autour de l'automatisation, de la collaboration et du feedback rapide."
+        - "L'objectif est de livrer plus fréquemment tout en conservant qualité, traçabilité et sécurité."
+        - "Infrastructure as Code permet de décrire et versionner l'infrastructure."
+
+    - title: "CI/CD"
+      points:
+        - "CI signifie Continuous Integration."
+        - "CD peut désigner Continuous Delivery ou Continuous Deployment selon le contexte."
+        - "Un pipeline automatise notamment lint, compilation, tests, packaging et déploiement."
+
+    - title: "Maven"
+      points:
+        - "Maven est un outil de build et de gestion de dépendances Java."
+        - "Le fichier pom.xml décrit notamment dépendances et plugins."
+        - "Le cycle courant comprend clean, compile, test, package, install et deploy."
+
+    - title: "Docker"
+      points:
+        - "Une image est un artefact immuable servant de base aux conteneurs."
+        - "Un Dockerfile décrit la construction d'une image."
+        - "FROM, COPY, RUN, ENV, EXPOSE et CMD font partie des instructions courantes."
+        - "Un conteneur est une instance d'exécution d'une image."
+
+    - title: "Kubernetes"
+      points:
+        - "Kubernetes orchestre les workloads conteneurisés."
+        - "Le Pod est l'unité d'exécution fondamentale."
+        - "Deployment gère notamment réplication et rolling updates."
+        - "Service fournit une abstraction réseau stable."
+        - "ConfigMap stocke des données de configuration non secrètes."
+        - "Secret est destiné aux données sensibles, avec des précautions de sécurité supplémentaires."
+
+    - title: "Helm et GitOps"
+      points:
+        - "Helm permet de packager et templater des manifests Kubernetes."
+        - "Les values permettent de paramétrer un chart selon l'environnement."
+        - "GitOps utilise Git comme source de vérité déclarative."
+        - "Argo CD compare l'état souhaité dans Git à l'état Kubernetes et peut synchroniser les écarts."
+
+    - title: "Chaîne de livraison"
+      points:
+        - "Un flux typique peut relier Git, pipeline CI, build, registry, puis Kubernetes ou Ansible."
+        - "Jenkins peut orchestrer des étapes de checkout, test, package, build d'image et déploiement."
+
+    - title: "Observabilité"
+      points:
+        - "Logs, métriques et traces permettent de comprendre le comportement d'un système."
+        - "L'observabilité facilite diagnostic, alerting et amélioration continue."
+
+    - title: "TLS et mTLS"
+      points:
+        - "TLS protège les communications réseau."
+        - "Les certificats X.509 reposent généralement sur une PKI et des autorités de certification."
+        - "Avec mTLS, le client et le serveur s'authentifient mutuellement avec des certificats."

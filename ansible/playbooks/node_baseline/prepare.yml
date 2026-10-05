@@ -7,5 +7,6 @@
     - nb_platform
     - nb_git
     - nb_workspace
+    - nb_course
     - nb_documentation
     - nb_report
